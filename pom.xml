@@ -178,13 +178,8 @@
         <url>scm:git:git@github.com:interactuamovil/im-contactosms-sdk-java.git</url>
         <connection>scm:git:git@github.com:interactuamovil/im-contactosms-sdk-java.git</connection>
         <developerConnection>scm:git:git@github.com:interactuamovil/im-contactosms-sdk-java.git</developerConnection>
-<<<<<<< HEAD
-      <tag>im-contactosms-sdk-java-3.1.2</tag>
+        <tag>HEAD</tag>
     </scm>
-=======
-      <tag>HEAD</tag>
-  </scm>
->>>>>>> 3fd888d4e4bf337b58714100dab0b37a4dc10ef0
 
 <!--    <profiles>
         <profile>
