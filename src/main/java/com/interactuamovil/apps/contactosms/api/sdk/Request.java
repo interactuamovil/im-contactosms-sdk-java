@@ -27,7 +27,12 @@ import java.security.InvalidKeyException;
 import java.security.KeyManagementException;
 import java.security.NoSuchAlgorithmException;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Date;
+import java.util.Locale;
+import java.util.Map;
+import java.util.TimeZone;
 import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.SSLSession;
 
@@ -58,6 +63,7 @@ abstract class Request {
         String PATTERN_RFC1123 = "EEE, dd MMM yyyy HH:mm:ss zzz";
 
         SimpleDateFormat httpDateFormat = new SimpleDateFormat(PATTERN_RFC1123, Locale.ENGLISH);
+        httpDateFormat.applyPattern(PATTERN_RFC1123);
         httpDateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
         String httpDate = httpDateFormat.format(new Date());
 
