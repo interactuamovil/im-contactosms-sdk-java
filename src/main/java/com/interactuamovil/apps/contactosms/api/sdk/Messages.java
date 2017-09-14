@@ -70,9 +70,22 @@ public class Messages extends Request {
      *
      * @param short_name The group short name
      * @param message The message
+     * @param messageId The unique message id
      * @return The message just sent
      */
     public ApiResponse<MessageJson> sendToGroups(String[] short_name, String message, String messageId) {
+        return sendToGroups(short_name, message, messageId, (byte)0);
+    }
+    /**
+     * Sends a message to a group array list
+     *
+     * @param short_name The group short name
+     * @param message The message
+     * @param messageId The unique message id
+     * @param dcs the data coding scheme
+     * @return The message just sent
+     */
+    public ApiResponse<MessageJson> sendToGroups(String[] short_name, String message, String messageId, byte dcs) {
         Map<String, Serializable> params = new LinkedHashMap<String, Serializable>();
         ApiResponse<MessageJson> response;
         MessageJson messageResponse;
@@ -80,6 +93,7 @@ public class Messages extends Request {
         params.put("groups", short_name);
         params.put("message", message);
         params.put("id", messageId);
+        params.put("dcs", dcs);
 
         try {
             response = doRequest("messages/send", "post", null, params, false);
@@ -115,6 +129,17 @@ public class Messages extends Request {
      * @return The message just sent
      */
     public ApiResponse<MessageJson> sendToContact(String msisdn, String message, String messageId) {
+        return sendToContact(msisdn, message, messageId, (byte)0);
+    }
+    /**
+     * Sends a message to a contact
+     * @param msisdn The msisdn
+     * @param message The text message
+     * @param messageId The message Id
+     * @param dcs the data coding scheme
+     * @return The message just sent
+     */
+    public ApiResponse<MessageJson> sendToContact(String msisdn, String message, String messageId, byte dcs) {
         Map<String, Serializable> params = new LinkedHashMap<String, Serializable>();
         ApiResponse<MessageJson> response;
         MessageJson messageResponse;
@@ -124,6 +149,7 @@ public class Messages extends Request {
         if (messageId != null) {
             params.put("id", messageId);
         }
+        params.put("dcs", dcs);
 
         try {
             response = doRequest("messages/send_to_contact", "post", null, params, false);

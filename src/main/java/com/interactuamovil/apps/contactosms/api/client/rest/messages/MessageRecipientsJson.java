@@ -1,12 +1,15 @@
 package com.interactuamovil.apps.contactosms.api.client.rest.messages;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.interactuamovil.apps.contactosms.api.utils.JsonObject;
 
 /**
  * Created by javier on 2/11/16.
  *
  */
-public class MessageRecipientsJson {
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class MessageRecipientsJson extends JsonObject {
     @JsonProperty("msisdn")
     private String msisdn;
     @JsonProperty("status")
