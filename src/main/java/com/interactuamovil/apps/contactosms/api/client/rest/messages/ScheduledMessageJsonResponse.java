@@ -4,6 +4,7 @@
  */
 package com.interactuamovil.apps.contactosms.api.client.rest.messages;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.interactuamovil.apps.contactosms.api.utils.JsonObject;
 
@@ -11,6 +12,7 @@ import com.interactuamovil.apps.contactosms.api.utils.JsonObject;
  *
  * @author sergeiw
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 class ScheduledMessageJsonResponse extends JsonObject {
     
     @JsonProperty(value="scheduled_message_id") 

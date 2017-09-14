@@ -1,8 +1,10 @@
 package com.interactuamovil.apps.contactosms.api.sdk.responses;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.interactuamovil.apps.contactosms.api.utils.JsonObject;
 import java.io.IOException;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class AccountResponse extends JsonObject {
 
     private String name;

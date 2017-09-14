@@ -27,6 +27,8 @@ class SendMessageToGroupRequestParams extends JsonObject {
     private String clientMessageId;
     @JsonProperty(value="from_file")
     private String fromFile;
+    @JsonProperty(value="dcs")
+    private Byte dcs = 0x0;
 
     /**
      * @return the groups
@@ -89,5 +91,19 @@ class SendMessageToGroupRequestParams extends JsonObject {
 
     public void setFromFile(String fromFile) {
         this.fromFile = fromFile;
+    }
+
+    /**
+     * @return the dcs
+     */
+    public Byte getDcs() {
+        return dcs;
+    }
+
+    /**
+     * @param dcs the dcs to set
+     */
+    public void setDcs(Byte dcs) {
+        this.dcs = dcs;
     }
 }

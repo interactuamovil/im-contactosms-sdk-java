@@ -43,7 +43,7 @@ class MessagesExample extends BaseExample {
 
     @Override   
     public void test() throws IOException, InvalidKeyException, NoSuchAlgorithmException {
-/*
+
         Messages messagesApi = new Messages(
             getApiKey(),
             getApiSecretKey(),
@@ -51,17 +51,17 @@ class MessagesExample extends BaseExample {
         );
 
         // Test send message to group
-        testSendToGroup(messagesApi);
+//        testSendToGroup(messagesApi);
 
         // Test send message to single contact
         testSendToContact(messagesApi);
 
         // Test adding scheduled message
-        testAddingScheduledMessage(messagesApi);
+//        testAddingScheduledMessage(messagesApi);
 
         // Test inbox messages
-        testInboxMessages(messagesApi);
-*/
+//        testInboxMessages(messagesApi);
+
     }
 
     private void testInboxMessages(Messages messagesApi) {
@@ -78,8 +78,13 @@ class MessagesExample extends BaseExample {
 
     private void testSendToContact(Messages messagesApi) {
 
+        // Test DCS=8 (UCS2)
+        // testMessage="hola ❤ ☀ ☆ ☂ \uF604";
+        // ApiResponse<MessageJson> response = messagesApi.sendToContact(
+        //    testContactMsisdn, testMessage, "idunico2", (byte)0x8);
+
         ApiResponse<MessageJson> response = messagesApi.sendToContact(
-            testContactMsisdn, testMessage, "idunico");
+                testContactMsisdn, testMessage, "idunico4");
 
         if (response.isOk()) {
             throw new AssertionError("Error sending message to contact: "

@@ -4,6 +4,7 @@
  */
 package com.interactuamovil.apps.contactosms.api.client.rest.messages;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -21,6 +22,7 @@ import java.util.List;
  *
  * @author sergeiw
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class MessageJson extends JsonObject {
     
     @JsonProperty(value="message_id")
