@@ -1,5 +1,6 @@
 package com.interactuamovil.apps.contactosms.api.client.rest.account;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -13,6 +14,7 @@ import java.util.Date;
  * Created by javier on 1/02/16.
  * Account json object response
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class AccountJsonObject extends JsonObject {
 
     @JsonProperty("account_id")

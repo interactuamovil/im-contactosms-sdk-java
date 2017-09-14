@@ -4,6 +4,7 @@
  */
 package com.interactuamovil.apps.contactosms.api.client.rest.groups;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.interactuamovil.apps.contactosms.api.utils.JsonObject;
 import java.io.IOException;
@@ -13,6 +14,7 @@ import java.util.List;
  *
  * @author sergeiw
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class GroupJsonObject extends JsonObject  {
     
     @JsonProperty(value = "short_name")

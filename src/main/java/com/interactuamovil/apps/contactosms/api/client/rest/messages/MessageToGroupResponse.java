@@ -1,7 +1,9 @@
 package com.interactuamovil.apps.contactosms.api.client.rest.messages;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 class MessageToGroupResponse {
 
     @JsonProperty(value="sms_sent")
