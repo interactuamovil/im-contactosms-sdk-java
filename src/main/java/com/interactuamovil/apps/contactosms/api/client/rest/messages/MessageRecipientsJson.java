@@ -11,6 +11,11 @@ public class MessageRecipientsJson {
     private String msisdn;
     @JsonProperty("status")
     private String status;
+    @JsonProperty("firstName")
+    private String firstName;
+    @JsonProperty("lastName")
+    private String lastName;
+    
 
     public String getMsisdn() {
         return msisdn;
@@ -27,4 +32,21 @@ public class MessageRecipientsJson {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+    
 }
