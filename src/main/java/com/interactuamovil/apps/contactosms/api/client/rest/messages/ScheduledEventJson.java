@@ -1,5 +1,6 @@
 package com.interactuamovil.apps.contactosms.api.client.rest.messages;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -14,6 +15,7 @@ import java.util.Date;
  * Created by javier on 27/11/15.
  * Scheduled event object
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ScheduledEventJson extends JsonObject{
 
