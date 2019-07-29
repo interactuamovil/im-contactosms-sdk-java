@@ -25,6 +25,8 @@ public class AccountJsonObject extends JsonObject {
     private String clientName;
     @JsonProperty("valid_since")
     private Date validSince;
+    @JsonProperty("valid_thru")
+    private Date validThru;
     @JsonProperty("sms_short_name")
     private String smsShortName;
     @JsonProperty("account_status")
@@ -41,6 +43,24 @@ public class AccountJsonObject extends JsonObject {
     private String comments;
     @JsonProperty("created_on")
     private Date createdOn;
+    @JsonProperty("subscription_message")
+    private String subscriptionMessage;
+    @JsonProperty("antispam_enabled")
+    private Boolean antispamEnabled;
+    @JsonProperty("api_enabled")
+    private Boolean apiEnabled;
+    @JsonProperty("api_use_short_name")
+    private Boolean apiUseShortName;
+    @JsonProperty("seller_email")
+    private String sellerEmail;
+    @JsonProperty("seller_name")
+    private String sellerName;
+    @JsonProperty("seller_phone_number")
+    private String sellerPhoneNumber;
+    @JsonProperty("api_callback_email_notification")
+    private String apiCallbackEmailNotification;
+    @JsonProperty("reporting_emails")
+    private String reportingEmails;
     @JsonProperty("current_package")
     private PackageJsonObject currentPackage;
 
@@ -78,6 +98,16 @@ public class AccountJsonObject extends JsonObject {
     @JsonDeserialize(using = JsonDateTimeDeserializer.class)
     public void setValidSince(Date validSince) {
         this.validSince = validSince;
+    }
+
+    @JsonSerialize(using = JsonDateTimeSerializer.class)
+    public Date getValidThru() {
+        return validThru;
+    }
+
+    @JsonDeserialize(using = JsonDateTimeDeserializer.class)
+    public void setValidThru(Date validThru) {
+        this.validThru = validThru;
     }
 
     public String getSmsShortName() {
@@ -144,6 +174,78 @@ public class AccountJsonObject extends JsonObject {
     @JsonDeserialize(using = JsonDateTimeDeserializer.class)
     public void setCreatedOn(Date createdOn) {
         this.createdOn = createdOn;
+    }
+
+    public String getSubscriptionMessage() {
+        return subscriptionMessage;
+    }
+
+    public void setSubscriptionMessage(String subscriptionMessage) {
+        this.subscriptionMessage = subscriptionMessage;
+    }
+
+    public Boolean getAntispamEnabled() {
+        return antispamEnabled;
+    }
+
+    public void setAntispamEnabled(Boolean antispamEnabled) {
+        this.antispamEnabled = antispamEnabled;
+    }
+
+    public Boolean getApiEnabled() {
+        return apiEnabled;
+    }
+
+    public void setApiEnabled(Boolean apiEnabled) {
+        this.apiEnabled = apiEnabled;
+    }
+
+    public Boolean getApiUseShortName() {
+        return apiUseShortName;
+    }
+
+    public void setApiUseShortName(Boolean apiUseShortName) {
+        this.apiUseShortName = apiUseShortName;
+    }
+
+    public String getSellerEmail() {
+        return sellerEmail;
+    }
+
+    public void setSellerEmail(String sellerEmail) {
+        this.sellerEmail = sellerEmail;
+    }
+
+    public String getSellerName() {
+        return sellerName;
+    }
+
+    public void setSellerName(String sellerName) {
+        this.sellerName = sellerName;
+    }
+
+    public String getSellerPhoneNumber() {
+        return sellerPhoneNumber;
+    }
+
+    public void setSellerPhoneNumber(String sellerPhoneNumber) {
+        this.sellerPhoneNumber = sellerPhoneNumber;
+    }
+
+    public String getApiCallbackEmailNotification() {
+        return apiCallbackEmailNotification;
+    }
+
+    public void setApiCallbackEmailNotification(String apiCallbackEmailNotification) {
+        this.apiCallbackEmailNotification = apiCallbackEmailNotification;
+    }
+
+    public String getReportingEmails() {
+        return reportingEmails;
+    }
+
+    public void setReportingEmails(String reportingEmails) {
+        this.reportingEmails = reportingEmails;
     }
 
     public PackageJsonObject getCurrentPackage() {
